@@ -87,11 +87,12 @@
     text-decoration: none;
     cursor: pointer;
     border-radius: 0 0 15px 15px;
-    /* Added Flexbox centering */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
+    /* Line height to center text vertically */
+    height: 40px; /* Adjust height according to the button size */
+    line-height: 40px; /* Should match the height for vertical centering */
 }
+
 
 
 /* Ensure no color change on hover or focus */

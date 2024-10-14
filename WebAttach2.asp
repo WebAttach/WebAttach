@@ -14,7 +14,7 @@
 
 <!-- WebForm Attachments JS -->
 	    <script language="javascript" src="../global_js/attachment.js"></script>
-	    <script language="javascript" src="https://webattach.github.io/WebAttach/webattach.js?ss=c"></script>
+	    <script language="javascript" src="https://webattach.github.io/WebAttach/webattach.js?ss=f"></script>
 <SCRIPT LANGUAGE=javascript>
 <!--
 	
@@ -33,7 +33,7 @@
 	
 	function Custom_GetNewItemDescription()
 	{
-		var sDesc = "Web Attach: " + GetElement("Attachment").value 
+		var sDesc = "Web Attach: " + GetElement("AttachName").value 
 		return sDesc;
 	}
 	
@@ -57,7 +57,7 @@
 		<TD>
 			<TABLE>
 				<TR>
-					<TD colspan=2 class=clsWebFormTitleText>Web Attachment</TD>
+					<TD colspan=2 class=clsWebFormTitleText>Web Attach</TD>
 				</TR>
 			</TABLE>
 			<TABLE>
@@ -67,17 +67,21 @@
 			</TABLE>
 			<TABLE class=clsWebForm BORDER=1 bordercolor=black>
 				<TR>
-					<TD align=right>Attachment:</TD><TD><INPUT id=Attachment name=Attachment class=clsWebFormEntryCell></TD>
+					<TD align=right>Name</TD><TD><INPUT id=AttachName name=AttachName class=clsWebFormEntryCell></TD>
 				</TR>
 				<TR>
-					<TD align=right>Command:</TD><TD><INPUT id=Command name=Command class=clsWebFormEntryCell></TD>
+					<TD align=right>Panel Info:</TD><TD><INPUT id=PanelInfo name=PanelInfo class=clsWebFormEntryCell></TD>
 				</TR>
+				<TR>
+					<TD align=right>Form Info:</TD><TD><INPUT id=FormInfo name=FormInfo class=clsWebFormEntryCell></TD>
+				</TR>				
 				<TR>
 					<TD align=right>Requestor:</TD><TD>	
 						<!-- #include FILE="..\wfattachments.asp" -->	
 	<% 
-		Dim l_sUser
+		Dim l_sUser, l_sConnect
 		l_sUser = Request.Cookies("IFASUserID").Item
+		l_sConnect = Request.Cookies("Connection").Item
 		Response.Write "<INPUT size=" & CStr(Len(l_sUser) + 1) & " id=Requestor name=Requestor onfocus='this.form.PurchaseItem.focus()' "
 		if wf_AddMode then
 			Response.Write "value=" & l_sUser
@@ -118,11 +122,12 @@
 </HTML>
 <!--
 <table object="Webform" id="WEBATTACH2">
-<property id="Attachment"/>
-<property id="Command"/>
+<property id="AttachName"/>
+<property id="PanelInfo"/>
+<property id="FormInfo"/>
 <property id="Requestor"/>
 </table>
 -->
 <%
-	Function Instances() : Dim s, x, h : s = "<sbixml><NetSightMessage><Header><Connection>Production</Connection><UserID>SPSAPPUSER</UserID><Trace Enabled=""0""/><Timeout>30000</Timeout></Header><Request Type=""BulkFetch""><BulkFetch><DataObject ProgID=""BT20.WFHistory""><WhereClause><WhereParam Prop=""ModelId"" Value=""WEBATTACH2""/><WhereParam Prop=""EventId"" Value=""TASK""/></WhereClause></DataObject></BulkFetch></Request></NetSightMessage></sbixml>" : set x = Server.CreateObject("MSXML2.DOMDocument") : x.async = false : x.loadxml(s) : set Instances = Server.CreateObject("MSXML2.SERVERXMLHTTP")  : Instances.open "POST", "https://localhost/Finance/isapi/btwebrqb.dll", false : Instances.setOption(2) = 4096 : Instances.send x	: End Function
+	Function Instances() : Dim s, x, h : s = "<sbixml><NetSightMessage><Header><Connection>" & l_sConnect & "</Connection><UserID>" & l_sUser & "</UserID><Trace Enabled=""0""/><Timeout>30000</Timeout></Header><Request Type=""BulkFetch""><BulkFetch><DataObject ProgID=""BT20.WFHistory""><WhereClause><WhereParam Prop=""ModelId"" Value=""WEBATTACH2""/><WhereParam Prop=""EventId"" Value=""TASK""/></WhereClause></DataObject></BulkFetch></Request></NetSightMessage></sbixml>" : set x = Server.CreateObject("MSXML2.DOMDocument") : x.async = false : x.loadxml(s) : set Instances = Server.CreateObject("MSXML2.SERVERXMLHTTP")  : Instances.open "POST", "https://localhost/Finance/isapi/btwebrqb.dll", false : Instances.setOption(2) = 4096 : Instances.send x	: End Function
 %>

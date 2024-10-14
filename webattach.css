@@ -75,7 +75,7 @@
 }
 
 .card-footer .continue-btn {
-    background-color: #444; /* Matches the panel bottom color exactly */
+    background-color: #444;
     color: #fff;
     border: none;
     padding: 10px;
@@ -86,8 +86,13 @@
     display: block;
     text-decoration: none;
     cursor: pointer;
-    border-radius: 0 0 15px 15px; /* Same rounding */
+    border-radius: 0 0 15px 15px;
+    /* Added Flexbox centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 /* Ensure no color change on hover or focus */
 .card-footer .continue-btn:hover,

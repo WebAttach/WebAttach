@@ -96,3 +96,10 @@
 
 </BODY>
 </HTML>
+<!--
+<table object="Webform" id="WEBATTACH2">
+<property id="Attachment"/>
+<property id="Command"/>
+<property id="Requestor"/>
+</table>
+-->

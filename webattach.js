@@ -1,4 +1,4 @@
-alert("Line 1")
+
     document.addEventListener("DOMContentLoaded", function() {
         // Find the table header and change the content to 'Web Attach'
         var headerCell = document.querySelector("#Header td");

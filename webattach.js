@@ -1,4 +1,4 @@
-//alert("Line 1")
+alert("Line 1")
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         // Find the table header and change the content to 'Web Attach'

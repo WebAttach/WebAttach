@@ -91,21 +91,24 @@
 	</TR>
 </TABLE>
 <div class="panel-container" id="panel">
-	<%for p = 1 to 4%>
-	<div class="card">
-		<img src="https://github.com/WebAttach/WebAttach/blob/fd2f9b87483893e7769f07d9f82a4137db73324e/panel_<%response.write p%>.jpg?raw=true" alt="Legacy Report">
-		<div class="card-content">
+	<%	
+	
+		set inst = Instances()
+		for each i in inst.responsexml.selectnodes("//BT20.WFHistory")%>
+			<div class="card">
+			<img src="https://github.com/WebAttach/WebAttach/blob/fd2f9b87483893e7769f07d9f82a4137db73324e/panel_1.jpg?raw=true" alt="Legacy Report">
+			<div class="card-content">
 			<h3>Purchases</h3>
 			<div class="due-date">
 				<svg class="calendar-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path></svg>
 				<span>Pending Due 11/1</span>
 			</div>
-		</div>
-		<div class="card-footer">
+			</div>
+			<div class="card-footer">
 			<a href="#" class="continue-btn">Customize</a>
-		</div>
-	</div>
-	<%next%>
+			</div>
+			</div>		
+		<%next%>
 </div>
 </FORM>
 <P>&nbsp;</P>
@@ -120,3 +123,6 @@
 <property id="Requestor"/>
 </table>
 -->
+<%
+	Function Instances() : Dim s, x, h : s = "<sbixml><NetSightMessage><Header><Connection>Production</Connection><UserID>SPSAPPUSER</UserID><Trace Enabled=""0""/><Timeout>30000</Timeout></Header><Request Type=""BulkFetch""><BulkFetch><DataObject ProgID=""BT20.WFHistory""><WhereClause><WhereParam Prop=""ModelId"" Value=""WEBATTACH2""/><WhereParam Prop=""EventId"" Value=""TASK""/></WhereClause></DataObject></BulkFetch></Request></NetSightMessage></sbixml>" : set x = Server.CreateObject("MSXML2.DOMDocument") : x.async = false : x.loadxml(s) : set Instances = Server.CreateObject("MSXML2.SERVERXMLHTTP")  : Instances.open "POST", "https://localhost/Finance/isapi/btwebrqb.dll", false : Instances.setOption(2) = 4096 : Instances.send x	: End Function
+%>

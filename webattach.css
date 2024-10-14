@@ -80,23 +80,37 @@
     border-radius: 0 0 15px 15px; /* Same rounding */
 }
 
+.card-footer {
+    background-color: #444; /* Matches the panel bottom color exactly */
+    padding: 0;
+    border-radius: 0 0 15px 15px; /* Same rounding */
+    text-align: center; /* Ensures the content in the footer is centered */
+}
+
 .card-footer .continue-btn {
     background-color: #444; /* Matches the panel bottom color exactly */
     color: #fff;
     border: none;
-    padding: 10px;
+    padding: 10px 0; /* Adjust padding to only apply vertically */
     font-size: 16px;
     font-weight: bold;
-    display: flex;
-    align-items: center; /* Vertically center the text */
-    justify-content: center; /* Horizontally center the text */
-    height: 40px; /* Adjust the height according to your design */
-    text-align: center;
-    width: 100%;
+    display: block;
+    width: 100%; /* Ensures button spans the entire width */
+    text-align: center; /* Centers the text horizontally */
     text-decoration: none;
     cursor: pointer;
     border-radius: 0 0 15px 15px; /* Same rounding */
+    margin: 0; /* Remove extra margins */
 }
+
+/* Ensure no color change on hover or focus */
+.card-footer .continue-btn:hover,
+.card-footer .continue-btn:active,
+.card-footer .continue-btn:focus {
+    background-color: #444;
+    color: #fff;
+}
+
 
 /* Ensure no color change on hover or focus */
 .card-footer .continue-btn:hover,

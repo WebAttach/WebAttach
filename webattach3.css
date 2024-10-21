@@ -1,1 +1,35 @@
+/* Style for the Header (SunGard -- New Item) */
+#Header {
+    background-color: steelblue;
+    color: white;  /* This will ensure text is visible on the steelblue background */
+}
+
+#Header td {
+    padding: 5px;
+    font-weight: bold;
+}
+
+/* Style for the Action Bar */
+#ActionBar {
+    background-color: steelblue;
+}
+
+#ActionBar td {
+    padding: 5px;
+    color: white;  /* Ensures the text and icons are visible against the background */
+}
+
+.clsBBarRaised {
+    background-color: steelblue;  /* This applies steelblue to the overall bar */
+}
+
+/* Additional styling to improve spacing and layout */
+.clsBtnOff img {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.clsBtnOff {
+    color: white;  /* Makes text on buttons visible */
+}
 

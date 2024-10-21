@@ -1,35 +1,40 @@
-/* Style for the Header (SunGard -- New Item) */
+/* Ensure the entire width of the header is covered */
 #Header {
     background-color: steelblue;
-    color: white;  /* This will ensure text is visible on the steelblue background */
+    color: white;  /* White text to ensure visibility */
+    width: 100%;
+    padding: 0;
 }
 
 #Header td {
+    background-color: steelblue;  /* Ensures table cells are also covered */
     padding: 5px;
     font-weight: bold;
+    border: none;  /* Remove any borders that could show through */
 }
 
-/* Style for the Action Bar */
+/* Ensure the entire width of the ActionBar is covered */
 #ActionBar {
     background-color: steelblue;
+    width: 100%;
 }
 
 #ActionBar td {
+    background-color: steelblue;
     padding: 5px;
-    color: white;  /* Ensures the text and icons are visible against the background */
+    color: white;  /* White text for readability */
+    border: none;  /* Remove any borders */
 }
 
-.clsBBarRaised {
-    background-color: steelblue;  /* This applies steelblue to the overall bar */
+/* Override any parent or external ERP styles affecting the full width */
+.clsBBarRaised, .clsBtnOff, .clsNavLinks, .clsBBarRaised td {
+    background-color: steelblue !important;
+    color: white;
+    border: none;
 }
 
-/* Additional styling to improve spacing and layout */
-.clsBtnOff img {
-    margin-right: 5px;
-    vertical-align: middle;
+/* Force all table rows and cells within these sections to take on the steelblue background */
+table#Header, table#ActionBar, table#Header td, table#ActionBar td {
+    background-color: steelblue !important;
+    border: none;
 }
-
-.clsBtnOff {
-    color: white;  /* Makes text on buttons visible */
-}
-

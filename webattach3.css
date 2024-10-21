@@ -276,3 +276,16 @@ td.clsBtnOff, td.clsBBarRaised, td.ActionBarOuter, a, img {
 td.clsBtnOff a, div.card-footer a.continue-btn {
     text-decoration: none;
 }
+a.continue-btn {
+    display: inline-block;  /* Make anchor behave like a button */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+a.continue-btn:hover {
+    background-color: #666;
+    text-decoration: underline;
+}

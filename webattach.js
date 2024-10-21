@@ -1,6 +1,13 @@
 window.onload = function() {
     // Array of color values (dark gray shades with variations)
-    const colors = [ 'blue','gray'];
+    const colors = [
+  '#1e3d59', // Cobalt Blue
+  '#2d4739', // Dark Green
+  '#4b3832', // Dark Brown
+  '#63474d', // Chestnut Brown
+  '#3a506b'  // Slate Gray
+];
+
     let currentIndex = 0;
  const outerTdElement = document.querySelector("td.clsBBarRaised");
       if (outerTdElement) {

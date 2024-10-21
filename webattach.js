@@ -1,6 +1,6 @@
 window.onload = function() {
     // Array of color values (dark gray shades with variations)
-    const colors = [ '#444'];
+    const colors = [ 'brown','gray'];
     let currentIndex = 0;
 
     // Function to change the background color

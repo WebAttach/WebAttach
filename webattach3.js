@@ -12,19 +12,23 @@ window.onload = function() {
 
   if (innerTdElement) {
     innerTdElement.style.setProperty('background-color', colors[currentIndex], 'important');
+       innerTdElement.style.setProperty('bgcolor', colors[currentIndex], 'important');
   }
 
   if (outerTdElement) {
     outerTdElement.style.setProperty('background-color', colors[currentIndex], 'important');
+      outerTdElement.style.setProperty('bgcolor', colors[currentIndex], 'important');
   }
 
   actionBarTdElements.forEach(td => {
     td.style.setProperty('background-color', colors[currentIndex], 'important');
+    td.style.setProperty('bgcolor', colors[currentIndex], 'important');
     console.log("Changed ActionBar color: " + colors[currentIndex]);
   });
 
   panelButtons.forEach(button => {
     button.style.setProperty('background-color', colors[currentIndex], 'important');
+    button.style.setProperty('bgcolor', colors[currentIndex], 'important');  
     console.log("Changed Button color: " + colors[currentIndex]);
   });
 

@@ -1,5 +1,72 @@
+window.onload = function() {
+    // Array of color values (dark gray shades with variations)
+    const colors = [ '#444'];
+    let currentIndex = 0;
 
-    document.addEventListener("DOMContentLoaded", function() {
+    // Function to change the background color
+function changeColor() {
+  const outerTdElement = document.querySelector("td.clsBBarRaised");
+  const actionBarTdElements = document.querySelectorAll("#ActionBar td");
+  const innerTdElement = document.querySelector("a#webAttachLink").closest("td");
+  const panelButtons = document.querySelectorAll('td.clsBtnOff');
+
+  // Target adjacent left-hand side of Action Bar (if it's a separate element)
+  const adjacentLeftElement = document.querySelector("td.some-specific-class"); // Replace 'some-specific-class' with the actual class or ID
+
+  if (innerTdElement) {
+    innerTdElement.style.setProperty('background-color', colors[currentIndex], 'important');
+  }
+
+  if (outerTdElement) {
+    outerTdElement.style.setProperty('background-color', colors[currentIndex], 'important');
+      outerTdElement.classList.remove('clsBBarRaised');
+  }
+
+  actionBarTdElements.forEach(td => {
+    td.style.setProperty('background-color', colors[currentIndex], 'important');
+  });
+
+  if (adjacentLeftElement) {
+    adjacentLeftElement.style.setProperty('background-color', colors[currentIndex], 'important');
+  }
+
+  panelButtons.forEach(button => {
+    button.style.setProperty('background-color', colors[currentIndex], 'important');
+  });
+
+  currentIndex = (currentIndex + 1) % colors.length;
+}
+
+
+    // Change the color every 30 seconds (30000 milliseconds)
+    setInterval(changeColor, 10000);
+};
+
+
+function showIframe() {
+    event.preventDefault();  // Prevent any default anchor behavior
+    document.getElementById('panel-container').style.display = 'none';
+    //document.getElementById('form-container').style.display = 'block';
+    document.getElementById('iframe-container').style.display = 'block';
+}
+function showForm() {
+    event.preventDefault();  // Prevent any default anchor behavior
+    document.getElementById('panel-container').style.display = 'none';
+    document.getElementById('form-container').style.display = 'block';
+    document.getElementById('iframe-container').style.display = 'none';
+}
+
+function showBudgetConsole() {
+    var shinyAppUrl = "https://posit.cloud/spaces/571199/content/9033978";
+    window.open(shinyAppUrl, '_blank');  // Opens in a new tab
+}
+
+
+function goBackToPanels() {
+    event.preventDefault();  // Prevent default anchor behavior
+     location.reload();
+}
+  document.addEventListener("DOMContentLoaded", function() {
         // Find the table header and change the content to 'Web Attach'
         var headerCell = document.querySelector("#Header td");
 
@@ -44,4 +111,5 @@
             });
         });
     });
+
 

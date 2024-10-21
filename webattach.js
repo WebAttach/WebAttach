@@ -2,7 +2,11 @@ window.onload = function() {
     // Array of color values (dark gray shades with variations)
     const colors = [ 'blue','gray'];
     let currentIndex = 0;
-
+ const outerTdElement = document.querySelector("td.clsBBarRaised");
+      if (outerTdElement) {
+    outerTdElement.style.setProperty('background-color', colors[currentIndex], 'important');
+      outerTdElement.classList.remove('clsBBarRaised');
+  }
     // Function to change the background color
 function changeColor() {
   const outerTdElement = document.querySelector("td.clsBBarRaised");

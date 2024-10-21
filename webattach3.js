@@ -73,7 +73,7 @@ let currentIndex = 0;
 
 // Function to change the background color with smooth transitions
 function changeColor() {
-   alert("Line 76")
+   
   // Select the ancestor <td> with the 'clsBBarRaised' class (outer strip for top and bottom)
   const outerTdElement = document.querySelector("td.clsBBarRaised");
 
@@ -97,7 +97,8 @@ function changeColor() {
 
   // Apply background color change to the outer <td> strip (top section and ActionBar)
   if (outerTdElement) {
-    outerTdElement.style.transition = 'background-color 10s ease';
+alert(colors[currentIndex])
+   outerTdElement.style.transition = 'background-color 10s ease';
     outerTdElement.style.backgroundColor = colors[currentIndex];
   }
 

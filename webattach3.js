@@ -1,4 +1,27 @@
-   document.addEventListener("DOMContentLoaded", function() {
+ function showIframe() {
+    event.preventDefault();  // Prevent any default anchor behavior
+    document.getElementById('panel-container').style.display = 'none';
+    //document.getElementById('form-container').style.display = 'block';
+    document.getElementById('iframe-container').style.display = 'block';
+}
+function showForm() {
+    event.preventDefault();  // Prevent any default anchor behavior
+    document.getElementById('panel-container').style.display = 'none';
+    document.getElementById('form-container').style.display = 'block';
+    document.getElementById('iframe-container').style.display = 'none';
+}
+
+function showBudgetConsole() {
+    var shinyAppUrl = "https://posit.cloud/spaces/571199/content/9033978";
+    window.open(shinyAppUrl, '_blank');  // Opens in a new tab
+}
+
+
+function goBackToPanels() {
+    event.preventDefault();  // Prevent default anchor behavior
+     location.reload();
+}
+  document.addEventListener("DOMContentLoaded", function() {
         // Find the table header and change the content to 'Web Attach'
         var headerCell = document.querySelector("#Header td");
 

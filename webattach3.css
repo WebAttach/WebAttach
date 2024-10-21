@@ -1,4 +1,198 @@
+     table#firstTable{
+          display:none;
+     }
+     body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
 
+        .panel-container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 50px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 240px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin: 15px 0 10px;
+            color: #333;
+        }
+
+        .due-date {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .calendar-icon {
+            margin-right: 5px;
+            width: 16px;
+            height: 16px;
+        }
+
+        .card-footer {
+            background-color: #4a4a4a;
+            padding: 10px;
+        }
+
+        .continue-btn {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .continue-btn:hover {
+            text-decoration: underline;
+        }
+
+.card-footer {
+    background-color: #444; /* Ensure this matches the panel bottom color */
+    padding: 0;
+    border-radius: 0 0 15px 15px; /* To match the panel's rounded corners */
+}
+
+.card-footer {
+    background-color: #444; /* Matches the panel bottom color exactly */
+    padding: 0;
+    border-radius: 0 0 15px 15px; /* Same rounding */
+}
+
+.card-footer {
+    background-color: #444; /* Matches the panel bottom color exactly */
+    padding: 0;
+    border-radius: 0 0 15px 15px; /* Same rounding */
+    text-align: center; /* Ensures the content in the footer is centered */
+}
+
+.card-footer .continue-btn {
+    background-color: #444; /* Matches the panel bottom color exactly */
+    color: #fff;
+    border: none;
+    padding: 10px 0; /* Adjust padding to only apply vertically */
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    width: 100%; /* Ensures button spans the entire width */
+    text-align: center; /* Centers the text horizontally */
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0 0 15px 15px; /* Same rounding */
+    margin: 0; /* Remove extra margins */
+}
+
+/* Ensure no color change on hover or focus */
+.card-footer .continue-btn:hover,
+.card-footer .continue-btn:active,
+.card-footer .continue-btn:focus {
+    background-color: #444;
+    color: #fff;
+}
+
+
+/* Ensure no color change on hover or focus */
+.card-footer .continue-btn:hover,
+.card-footer .continue-btn:active,
+.card-footer .continue-btn:focus {
+    background-color: #444;
+    color: #fff;
+}
+
+
+
+
+/* Ensure no color change on hover or focus */
+.card-footer .continue-btn:hover,
+.card-footer .continue-btn:active,
+.card-footer .continue-btn:focus {
+    background-color: #444;
+    color: #fff;
+}
+  .form-container {
+    width: 50%;
+    margin: 40px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-container h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+
+  .form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+
+  .form-container input[type="text"],
+  .form-container input[type="email"],
+  .form-container input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .form-container .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+.form-container button {
+    background-color: #444;  /* Match the panel button color */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0 0 15px 15px;  /* Match the panel's rounded corners */
+    margin: 10px 0;  /* Add some spacing between buttons */
+}
+
+.form-container button:hover {
+    background-color: #666;  /* Slight hover effect */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
 /* Ensure the entire width of the header is covered */
 #Header {
     background-color: steelblue;

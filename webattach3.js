@@ -100,4 +100,4 @@ function changeColor() {
 }
 
 // Change the color every 30 seconds (30000 milliseconds)
-setInterval(changeColor, 10000);
+setInterval(changeColor, 30000);

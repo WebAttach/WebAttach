@@ -97,7 +97,6 @@ function changeColor() {
 
   // Apply background color change to the outer <td> strip (top section and ActionBar)
   if (outerTdElement) {
-alert(colors[currentIndex])
    outerTdElement.style.transition = 'background-color 10s ease';
     outerTdElement.style.backgroundColor = colors[currentIndex];
   }

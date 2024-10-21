@@ -38,3 +38,18 @@ table#Header, table#ActionBar, table#Header td, table#ActionBar td {
     background-color: steelblue !important;
     border: none;
 }
+/* Add a transition to all relevant td elements, buttons, and links */
+td.clsBBarRaised, td#colorChangingTd, td.clsBtnOff, div.card-footer a.continue-btn, td.ActionBarOuter {
+    transition: background-color 10s ease;
+}
+
+/* Remove borders and outlines to avoid visual clutter */
+td.clsBtnOff, td.clsBBarRaised, td.ActionBarOuter, a, img {
+    border: none !important;
+    outline: none !important;
+}
+
+/* Ensure links and button text do not have underlines */
+td.clsBtnOff a, div.card-footer a.continue-btn {
+    text-decoration: none;
+}

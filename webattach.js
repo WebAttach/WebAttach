@@ -1,6 +1,7 @@
 window.onload = function() {
     // Array of color values (dark gray shades with variations)
     const colors = [
+  'gray',      
   '#1e3d59', // Cobalt Blue
   '#2d4739', // Dark Green
   '#4b3832', // Dark Brown

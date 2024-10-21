@@ -19,6 +19,7 @@ function changeColor() {
 
   if (outerTdElement) {
     outerTdElement.style.setProperty('background-color', colors[currentIndex], 'important');
+      outerTdElement.classList.remove('clsBBarRaised');
   }
 
   actionBarTdElements.forEach(td => {

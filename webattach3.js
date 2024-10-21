@@ -4,35 +4,36 @@ window.onload = function() {
     let currentIndex = 0;
 
     // Function to change the background color
- function changeColor() {
+function changeColor() {
   const outerTdElement = document.querySelector("td.clsBBarRaised");
   const actionBarTdElements = document.querySelectorAll("#ActionBar td");
   const innerTdElement = document.querySelector("a#webAttachLink").closest("td");
   const panelButtons = document.querySelectorAll('td.clsBtnOff');
 
+  // Target adjacent left-hand side of Action Bar (if it's a separate element)
+  const adjacentLeftElement = document.querySelector("td.some-specific-class"); // Replace 'some-specific-class' with the actual class or ID
+
   if (innerTdElement) {
     innerTdElement.style.setProperty('background-color', colors[currentIndex], 'important');
-       innerTdElement.style.setProperty('bgcolor', colors[currentIndex], 'important');
   }
 
   if (outerTdElement) {
     outerTdElement.style.setProperty('background-color', colors[currentIndex], 'important');
-      outerTdElement.style.setProperty('bgcolor', colors[currentIndex], 'important');
   }
 
   actionBarTdElements.forEach(td => {
     td.style.setProperty('background-color', colors[currentIndex], 'important');
-    td.style.setProperty('bgcolor', colors[currentIndex], 'important');
-    console.log("Changed ActionBar color: " + colors[currentIndex]);
   });
+
+  if (adjacentLeftElement) {
+    adjacentLeftElement.style.setProperty('background-color', colors[currentIndex], 'important');
+  }
 
   panelButtons.forEach(button => {
     button.style.setProperty('background-color', colors[currentIndex], 'important');
-    button.style.setProperty('bgcolor', colors[currentIndex], 'important');  
-    console.log("Changed Button color: " + colors[currentIndex]);
   });
 
-  currentIndex = (currentIndex + 1) % colors.length; // Loop through colors
+  currentIndex = (currentIndex + 1) % colors.length;
 }
 
 

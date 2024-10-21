@@ -1,4 +1,32 @@
-     table#firstTable{
+/* Styling for the search box */
+#panelSearch {
+    width: 40%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Less rounded */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    //transition: all 0.3s ease;
+}
+
+/* Add padding to the top band */
+td.clsBBarRaised {
+    padding: 12px 0; /* Adding a bit more height for the shadow */
+}
+
+/* On focus, enhance the border and shadow */
+#panelSearch:focus {
+    outline: none;
+    border-color: #6699cc;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+table#firstTable{
           display:none;
      }
      body {
@@ -192,4 +220,72 @@
 .button-container {
     display: flex;
     justify-content: space-between;
+}
+/* Ensure the entire width of the header is covered */
+#Header {
+    background-color: steelblue;
+    color: white;  /* White text to ensure visibility */
+    width: 100%;
+    padding: 0;
+}
+
+#Header td {
+    background-color: steelblue;  /* Ensures table cells are also covered */
+    padding: 5px;
+    font-weight: bold;
+    border: none;  /* Remove any borders that could show through */
+}
+
+/* Ensure the entire width of the ActionBar is covered */
+#ActionBar {
+    background-color: steelblue;
+    width: 100%;
+}
+
+#ActionBar td {
+    background-color: steelblue;
+    padding: 5px;
+    color: white;  /* White text for readability */
+    border: none;  /* Remove any borders */
+}
+
+/* Override any parent or external ERP styles affecting the full width */
+.clsBBarRaised, .clsBtnOff, .clsNavLinks, .clsBBarRaised td {
+    background-color: steelblue !important;
+    color: white;
+    border: none;
+}
+
+/* Force all table rows and cells within these sections to take on the steelblue background */
+table#Header, table#ActionBar, table#Header td, table#ActionBar td {
+    background-color: steelblue !important;
+    border: none;
+}
+/* Add a transition to all relevant td elements, buttons, and links */
+//td.clsBBarRaised, td#colorChangingTd, td.clsBtnOff, div.card-footer a.continue-btn, td.ActionBarOuter {
+   // transition: background-color 10s ease;
+//}
+
+/* Remove borders and outlines to avoid visual clutter */
+td.clsBtnOff, td.clsBBarRaised, td.ActionBarOuter, a, img {
+    border: none !important;
+    outline: none !important;
+}
+
+/* Ensure links and button text do not have underlines */
+td.clsBtnOff a, div.card-footer a.continue-btn {
+    text-decoration: none;
+}
+a.continue-btn {
+    display: inline-block;  /* Make anchor behave like a button */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+a.continue-btn:hover {
+    background-color: #666;
+    text-decoration: underline;
 }

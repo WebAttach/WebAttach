@@ -45,7 +45,7 @@
     });
 
 // Array of color values (dark gray shades with variations like brown-gray, blue-gray)
-const colors = ['steelblue', '#2c2c2c', '#3b3b3b', '#4b4b4b', '#555555', '#5f5f5f', '#696969', '#707070']; // Add more colors if you want
+const colors = ['#2c2c2c', '#3b3b3b', '#4b4b4b', '#555555', '#5f5f5f', '#696969', '#707070']; // Add more colors if you want
 let currentIndex = 0;
 
 // Function to change the background color with smooth transitions

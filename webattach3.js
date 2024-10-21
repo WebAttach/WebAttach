@@ -1,4 +1,43 @@
- function showIframe() {
+window.onload = function() {
+    // Array of color values (dark gray shades with variations)
+    const colors = ['steelblue', '#2c2c2c', '#3b3b3b', '#4b4b4b', '#555555', '#5f5f5f', '#696969', '#707070'];
+    let currentIndex = 0;
+
+    // Function to change the background color
+ function changeColor() {
+  const outerTdElement = document.querySelector("td.clsBBarRaised");
+  const actionBarTdElements = document.querySelectorAll("#ActionBar td");
+  const innerTdElement = document.querySelector("a#webAttachLink").closest("td");
+  const panelButtons = document.querySelectorAll('td.clsBtnOff');
+
+  if (innerTdElement) {
+    innerTdElement.style.setProperty('background-color', colors[currentIndex], 'important');
+  }
+
+  if (outerTdElement) {
+    outerTdElement.style.setProperty('background-color', colors[currentIndex], 'important');
+  }
+
+  actionBarTdElements.forEach(td => {
+    td.style.setProperty('background-color', colors[currentIndex], 'important');
+    console.log("Changed ActionBar color: " + colors[currentIndex]);
+  });
+
+  panelButtons.forEach(button => {
+    button.style.setProperty('background-color', colors[currentIndex], 'important');
+    console.log("Changed Button color: " + colors[currentIndex]);
+  });
+
+  currentIndex = (currentIndex + 1) % colors.length; // Loop through colors
+}
+
+
+    // Change the color every 30 seconds (30000 milliseconds)
+    setInterval(changeColor, 10000);
+};
+
+
+function showIframe() {
     event.preventDefault();  // Prevent any default anchor behavior
     document.getElementById('panel-container').style.display = 'none';
     //document.getElementById('form-container').style.display = 'block';

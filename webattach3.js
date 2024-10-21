@@ -50,6 +50,7 @@ let currentIndex = 0;
 
 // Function to change the background color with smooth transitions
 function changeColor() {
+   alert("Line 53")
   // Select the ancestor <td> with the 'clsBBarRaised' class (outer strip for top and bottom)
   const outerTdElement = document.querySelector("td.clsBBarRaised");
 
@@ -99,4 +100,4 @@ function changeColor() {
 }
 
 // Change the color every 30 seconds (30000 milliseconds)
-setInterval(changeColor, 30000);
+setInterval(changeColor, 3000);

@@ -1,4 +1,32 @@
-     table#firstTable{
+/* Styling for the search box */
+#panelSearch {
+    width: 40%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Less rounded */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Add padding to the top band */
+td.clsBBarRaised {
+    padding: 12px 0; /* Adding a bit more height for the shadow */
+}
+
+/* On focus, enhance the border and shadow */
+#panelSearch:focus {
+    outline: none;
+    border-color: #6699cc;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+table#firstTable{
           display:none;
      }
      body {

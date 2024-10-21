@@ -1,3 +1,4 @@
+alert("Line 1")
 /* Ensure the entire width of the header is covered */
 #Header {
     background-color: steelblue;

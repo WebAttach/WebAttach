@@ -73,7 +73,7 @@ let currentIndex = 0;
 
 // Function to change the background color with smooth transitions
 function changeColor() {
-   
+   alert("Line 76")
   // Select the ancestor <td> with the 'clsBBarRaised' class (outer strip for top and bottom)
   const outerTdElement = document.querySelector("td.clsBBarRaised");
 

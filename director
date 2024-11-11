@@ -1,0 +1,14 @@
+commands:
+  - name: excel
+    description: Check for director.xlsx, list sheets, and headers.
+    action: "check_excel"
+  - name: word
+    description: Check for director.docx, list bookmarks.
+    action: "check_word"
+    suffix_supported: true
+  - name: access
+    description: Check for director.accdb, list tables.
+    action: "check_access"
+settings:
+  default_timeout: 1
+  db_file_path: "/path/to/database"
